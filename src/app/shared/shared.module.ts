@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MailToDirective } from './mail-to.directive';
+import { PhonePipe } from './phone.pipe';
 
 @NgModule({
-  declarations: [MailToDirective],
+  declarations: [MailToDirective, PhonePipe],
   imports: [CommonModule],
-  exports: [MailToDirective],
+  exports: [MailToDirective, PhonePipe],
 })
 export class SharedModule {}
