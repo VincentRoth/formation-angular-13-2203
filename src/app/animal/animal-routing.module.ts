@@ -9,8 +9,8 @@ const routes: Routes = [
     path: 'animals',
     component: AnimalComponent,
     children: [
-      { path: '', component: AnimalListComponent },
-      { path: ':id', component: AnimalDetailsComponent },
+      { path: '', outlet: 'primary', component: AnimalListComponent },
+      { path: ':id', outlet: 'primary', component: AnimalDetailsComponent },
     ],
   },
 ];
