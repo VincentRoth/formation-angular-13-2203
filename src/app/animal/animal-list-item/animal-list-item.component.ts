@@ -9,4 +9,11 @@ import { Animal } from '../../shared/api/animal';
 export class AnimalListItemComponent {
   @Input()
   model: Animal;
+
+  @Output()
+  deletion: EventEmitter<Animal> = new EventEmitter();
+
+  deleteItem(): void {
+    this.deletion.emit(this.model);
+  }
 }
