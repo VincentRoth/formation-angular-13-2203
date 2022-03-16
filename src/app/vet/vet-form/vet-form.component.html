@@ -1,0 +1,9 @@
+<form *ngIf="vetForm" [formGroup]="vetForm" (ngSubmit)="onSubmit()">
+  <label for="lastName">Nom</label>
+  <input id="lastName" formControlName="lastName" /> <br />
+
+  <label for="firstName">Prénom</label>
+  <input id="firstName" formControlName="firstName" /> <br />
+
+  <button type="submit">Enregistrer</button>
+</form>
