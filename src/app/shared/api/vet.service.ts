@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AbstractCrudService } from './abstract-crud.service';
-import { Animal } from './animal';
+import { Veterinarian } from './veterinarian';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AnimalService extends AbstractCrudService<Animal> {
+export class VetService extends AbstractCrudService<Veterinarian> {
   constructor(httpClient: HttpClient) {
-    super(httpClient, '/api/animals');
+    super(httpClient, '/api/veterinarians');
   }
 }

@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let animal of animals">
+  <li *ngFor="let animal of items">
     <app-animal-list-item
       [model]="animal"
       (deletion)="deleteItemFromList($event)"

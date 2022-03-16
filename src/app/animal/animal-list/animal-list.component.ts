@@ -1,28 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Animal } from '../../shared/api/animal';
 import { AnimalService } from '../../shared/api/animal.service';
+import { AbstractListComponent } from '../../shared/ui-utils/abstract-list.component';
 
 @Component({
   selector: 'app-animal-list',
   templateUrl: './animal-list.component.html',
   styleUrls: ['./animal-list.component.scss'],
 })
-export class AnimalListComponent implements OnInit {
-  animals: Animal[];
-
-  constructor(private animalService: AnimalService) {}
-
-  ngOnInit(): void {
-    this.refreshData();
+export class AnimalListComponent extends AbstractListComponent<Animal> {
+  constructor(animalService: AnimalService) {
+    super(animalService);
   }
 
-  deleteItemFromList(model: Animal): void {
-    this.animalService.delete(model.id).subscribe(() => {
-      this.refreshData();
-    });
-  }
+  override ngOnInit(): void {
+    super.ngOnInit();
 
-  private refreshData(): void {
-    this.animalService.getAll().subscribe((data) => (this.animals = data));
+    // More specific logic
   }
 }

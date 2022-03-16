@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let vet of items">
+    {{ vet.lastName }} {{ vet.firstName }}
+    <a [routerLink]="[vet.id]">Voir</a>
+    <button (click)="deleteItemFromList(vet)">Supprimer</button>
+  </li>
+</ul>
