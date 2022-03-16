@@ -1,23 +1,75 @@
-<form (ngSubmit)="onSubmit()" *ngIf="animal">
+<form #animalForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="animal">
   <label for="name">Nom</label>
-  <input id="name" name="name" [(ngModel)]="animal.name" /><br />
+  <input
+    id="name"
+    name="name"
+    [(ngModel)]="animal.name"
+    required
+    #nameCtrl="ngModel"
+  /><br />
+  <p
+    *ngIf="(animalForm.submitted || nameCtrl.dirty) && nameCtrl.errors?.['required']"
+  >
+    Champ obligatoire
+  </p>
 
   <label for="species">Espèce</label>
-  <input id="species" name="species" [(ngModel)]="animal.species" /><br />
+  <input
+    id="species"
+    name="species"
+    [(ngModel)]="animal.species"
+    required
+    #speciesCtrl="ngModel"
+  /><br />
+  <p
+    *ngIf="(animalForm.submitted || speciesCtrl.dirty) && speciesCtrl.errors?.['required']"
+  >
+    Champ obligatoire
+  </p>
 
   <label for="veterinarian">Vétérinaire</label>
   <input
     id="veterinarian"
     name="veterinarian"
     [(ngModel)]="animal.veterinarian"
+    required
+    #veterinarianCtrl="ngModel"
   /><br />
+  <p
+    *ngIf="(animalForm.submitted || veterinarianCtrl.dirty) && veterinarianCtrl.errors?.['required']"
+  >
+    Champ obligatoire
+  </p>
 
   <label for="comment">Commentaire</label>
-  <textarea id="comment" name="comment" [(ngModel)]="animal.comment"></textarea
-  ><br />
+  <textarea
+    id="comment"
+    name="comment"
+    [(ngModel)]="animal.comment"
+    minlength="50"
+    #commentCtrl="ngModel"
+  ></textarea>
+  <br />
+  <p
+    *ngIf="(animalForm.submitted || commentCtrl.dirty) && commentCtrl.errors?.['minlength']"
+  >
+    Le minimum est de
+    {{commentCtrl.errors?.['minlength'].requiredLength}} lettres.
+  </p>
 
   <label for="email">Email</label>
-  <input id="email" name="email" [(ngModel)]="animal.email" /><br />
+  <input
+    id="email"
+    name="email"
+    [(ngModel)]="animal.email"
+    email
+    #emailCtrl="ngModel"
+  /><br />
+  <p
+    *ngIf="(animalForm.submitted || emailCtrl.dirty) && emailCtrl.errors?.['email']"
+  >
+    Le format de l'email n'est pas valide.
+  </p>
 
   <label for="phoneNumber">Téléphone</label>
   <input
