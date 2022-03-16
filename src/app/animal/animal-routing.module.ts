@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Right } from '../shared/auth/current-user.service';
+import { RightGuard } from '../shared/auth/right.guard';
 import { AnimalDetailsComponent } from './animal-details/animal-details.component';
 import { AnimalDetailsResolver } from './animal-details/animal-details.resolver';
 import { AnimalListComponent } from './animal-list/animal-list.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
         component: AnimalDetailsComponent,
         resolve: {
           animal: AnimalDetailsResolver,
+        },
+        canActivate: [RightGuard],
+        data: {
+          right: Right.ANIMAL_GET,
         },
       },
     ],
