@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { VetFormComponent } from './vet-form.component';
 
@@ -8,9 +11,13 @@ describe('VetFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VetFormComponent ]
-    })
-    .compileComponents();
+      declarations: [VetFormComponent],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

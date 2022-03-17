@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AnimalListItemComponent } from '../animal-list-item/animal-list-item.component';
 
 import { AnimalListComponent } from './animal-list.component';
 
@@ -8,9 +11,9 @@ describe('AnimalListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnimalListComponent ]
-    })
-    .compileComponents();
+      declarations: [AnimalListComponent, AnimalListItemComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
