@@ -1,12 +1,10 @@
 <a routerLink="new">Créer une fiche</a>
 
-<ul>
-  <li *ngFor="let animal of items">
-    <app-animal-list-item
-      [model]="animal"
-      (deletion)="deleteItemFromList($event)"
-    >
-      TEST
-    </app-animal-list-item>
-  </li>
-</ul>
+<div class="list">
+  <app-animal-list-item
+    *ngFor="let animal of items"
+    [model]="animal"
+    (deletion)="deleteItemFromList($event)"
+  >
+  </app-animal-list-item>
+</div>

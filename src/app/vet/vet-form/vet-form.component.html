@@ -4,21 +4,21 @@
   [formGroup]="vetForm"
   (ngSubmit)="onSubmit()"
 >
-  <label for="lastName">Nom</label>
-  <input id="lastName" formControlName="lastName" /><br />
-  <p
-    *ngIf="(ngForm.submitted || vetForm.get('lastName').dirty) && vetForm.get('lastName').errors?.['required']"
-  >
-    Champ obligatoire
-  </p>
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="lastName" />
+    <mat-error *ngIf="vetForm.get('lastName').errors?.['required']">
+      Champ obligatoire
+    </mat-error>
+  </mat-form-field>
 
-  <label for="firstName">Prénom</label>
-  <input id="firstName" formControlName="firstName" /><br />
-  <p
-    *ngIf="(ngForm.submitted || vetForm.get('firstName').dirty) && vetForm.get('firstName').errors?.['required']"
-  >
-    Champ obligatoire
-  </p>
+  <mat-form-field>
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="firstName" />
+    <mat-error *ngIf="vetForm.get('firstName').errors?.['required']">
+      Champ obligatoire
+    </mat-error>
+  </mat-form-field>
 
-  <button type="submit">Enregistrer</button>
+  <button type="submit" mat-button color="primary">Enregistrer</button>
 </form>

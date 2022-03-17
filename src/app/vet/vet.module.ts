@@ -7,6 +7,7 @@ import { VetDetailsComponent } from './vet-details/vet-details.component';
 import { VetListComponent } from './vet-list/vet-list.component';
 import { VetFormComponent } from './vet-form/vet-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     VetListComponent,
     VetFormComponent,
   ],
-  imports: [CommonModule, VetRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, VetRoutingModule, ReactiveFormsModule, SharedModule],
 })
 export class VetModule {}

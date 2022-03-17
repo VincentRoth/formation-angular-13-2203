@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+}
+
+app-animal-list-item {
+  width: 33%;
+  margin: 8px;
+}
