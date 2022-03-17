@@ -1,5 +1,5 @@
 <form #animalForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="animal">
-  <label for="name">Nom</label>
+  <label for="name">{{ "animal.fields.name" | translate }}</label>
   <input
     id="name"
     name="name"

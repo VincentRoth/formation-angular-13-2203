@@ -1,0 +1,15 @@
+{
+  "common": {
+    "menu": {
+      "home": "Accueil"
+    }
+  },
+  "animal": {
+    "details": {
+      "name": "Nom : {{name}}"
+    },
+    "fields": {
+      "name": "Nom"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <p *ngIf="animal; else loading">
-  Nom : {{ animal.name }}<br />
+  {{ "animal.details.name" | translate: animal }}<br />
   Espèce : {{ animal.species }}<br />
   Vétérinaire : {{ animal.veterinarian }}<br />
   Commentaire : {{ animal.comment }}<br />
