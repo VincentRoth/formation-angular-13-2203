@@ -5,6 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PhonePipe implements PipeTransform {
   transform(value: string, separator = '-'): string {
-    return value?.replace(/\./g, separator);
+    if (!value || typeof value !== 'string') {
+      return value;
+    }
+    return value.replace(/\./g, separator);
   }
 }
