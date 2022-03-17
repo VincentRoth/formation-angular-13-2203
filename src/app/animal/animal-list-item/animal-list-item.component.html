@@ -1,4 +1,7 @@
 {{ model.name }} - {{ model.species }}
+
+<ng-content></ng-content>
+
 <a [routerLink]="[model.id]">Voir</a>
 <a [routerLink]="['edit', model.id]">Modifier</a>
 <button (click)="deleteItem()">Supprimer</button>
